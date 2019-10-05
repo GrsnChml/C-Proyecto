@@ -105,6 +105,8 @@ void Menuprincipal()
 	gotoxy(21,18);
 	cout<<"5) Cargar Reportes."<<endl;
 	gotoxy(21,19);
+	cout<<"6) Mostrar Proveedores."<<endl;
+	gotoxy(21,20);
 	cout<<"0) Salir."<<endl;
 	gotoxy(47,27);
 	cin>>Opcion;
@@ -129,6 +131,10 @@ void Menuprincipal()
 		
 		case 5:
 			CargarReportes();
+		break;
+			
+		case 6:
+			CargarProveedores();
 		break;
 		
 		case 0:
@@ -608,6 +614,14 @@ int CargarReportes()
 
 	ArchivoProductos.close();
 	
+	Carga();
+	main();
+}
+
+int CargarProveedores() {
+	system("cls");
+	cout<<"\n\n\t\t\t PROVEEDORES\n\n";
+	getch();
 	Carga();
 	main();
 }
