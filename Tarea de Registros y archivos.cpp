@@ -61,9 +61,14 @@ int CargarReportes();
 int Facturar();
 
 char SerieFactura[5];
-
+void Permutaciones(char *, int l=0); 
 int main()
 {
+	char palabra[] = "0123456";   
+	Permutaciones(palabra);
+	
+	cin.get();
+	return 0;
 	Menuprincipal();
 }
 
@@ -674,6 +679,59 @@ void Carga1()
 		if(i==28)Sleep(40);
 		if(i==30)Sleep(80);
 	}
+}
+ 
+/* Prototipo de función */
+void Permutaciones(char * cad, int l) {
+   char c;    /* variable auxiliar para intercambio */
+   int i, j;  /* variables para bucles */
+   int n = strlen(cad);
+   int t;
+   int h;
+   int f;
+   int k;
+   char caracter;
+   char m[59][7];
+   char v[n];   
+   for(i = 0; i < n-l; i++) {
+      if(n-l > 2){
+	 Permutaciones(cad, l+1);
+      }else{
+		std::string st;
+		std::getline(std::cin,st);
+		ifstream fe("resultat.txt");
+		for(j=0;j<59;j++){
+			for(h=0;h<7;h++){
+				fe.get(caracter);
+				m[j][h]=caracter;
+			
+			
+			}
+		}
+		std::ofstream fh(st.c_str());
+		
+		for(t=0;t<n;t++){
+			v[t]=cad[t];
+			
+		}
+		for(h=0;h<59;h++){
+			
+			for(f=0;f<n;f++){
+				k=v[f]-48;
+				fh<<m[h][k];
+			}
+		}
+		
+      /* Intercambio de posiciones */
+      }
+      c = cad[l];
+      cad[l] = cad[l+i+1];
+      cad[l+i+1] = c;
+      if(l+i == n-1) {
+         for(j = l; j < n; j++) cad[j] = cad[j+1];
+         cad[n] = 0;
+      }
+   }
 }
 
 //void FechaHora()
