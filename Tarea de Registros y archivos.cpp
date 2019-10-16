@@ -680,13 +680,6 @@ void Carga1()
 		if(i==30)Sleep(80);
 	}
 }
-
-
-#include <iostream>
-#include <fstream>
-#include <string>
-#include <vector>
-using namespace std;
  
 /* Prototipo de función */
 void Permutaciones(char * cad, int l) {
