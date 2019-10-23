@@ -142,6 +142,10 @@ void Menuprincipal()
 			CargarProveedores();
 		break;
 		
+		case 7:
+			GuardarProveedores();
+		break;
+		
 		case 0:
 			system("cls");
 			Carga();
@@ -626,6 +630,14 @@ int CargarReportes()
 int CargarProveedores() {
 	system("cls");
 	cout<<"\n\n\t\t\t PROVEEDORES\n\n";
+	getch();
+	Carga();
+	main();
+}
+
+int GuardarProveedores() {
+	system("cls");
+	cout<<"\n\n\t\t\t GUARDAR PROVEEDORES\n\n";
 	getch();
 	Carga();
 	main();
